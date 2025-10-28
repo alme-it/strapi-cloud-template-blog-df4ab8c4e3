@@ -27,27 +27,31 @@
     },
     "description": {
       "type": "text",
-      "maxLength": 80,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "maxLength": 80
     },
     "slug": {
       "type": "uid",
-      "targetField": "title",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "targetField": "title",
+      "required": true
     },
     "cover": {
       "type": "media",
       "multiple": false,
-      "required": false,
-      "allowedTypes": ["images", "files", "videos"]
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     },
     "hot": {
       "type": "boolean",
@@ -82,10 +86,6 @@
       "options": {
         "preset": "defaultHtml"
       }
-    },
-    "blocks": {
-      "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
     }
   }
 }
