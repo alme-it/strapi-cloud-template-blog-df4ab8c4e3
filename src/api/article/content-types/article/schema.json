@@ -49,15 +49,6 @@
       "required": false,
       "allowedTypes": ["images", "files", "videos"]
     },
-    "displayedAt": {
-      "type": "datetime",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": true
-    },
     "hot": {
       "type": "boolean",
       "pluginOptions": {
