@@ -49,6 +49,25 @@
       "required": false,
       "allowedTypes": ["images", "files", "videos"]
     },
+    "displayedAt": {
+      "type": "datetime",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true
+    },
+    "hot": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "default": false
+    },
     "author": {
       "type": "relation",
       "relation": "manyToOne",
