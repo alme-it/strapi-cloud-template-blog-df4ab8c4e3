@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "swipers",
+  "info": {
+    "singularName": "swiper",
+    "pluralName": "swipers",
+    "displayName": "swiper"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "slider": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.swiper-slider",
+      "repeatable": true
+    }
+  }
+}

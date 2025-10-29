@@ -633,6 +633,40 @@ export interface ApiChairmanChairman extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiSwiperSwiper extends Struct.SingleTypeSchema {
+  collectionName: 'swipers';
+  info: {
+    displayName: 'swiper';
+    pluralName: 'swipers';
+    singularName: 'swiper';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::swiper.swiper'>;
+    publishedAt: Schema.Attribute.DateTime;
+    slider: Schema.Attribute.Component<'shared.swiper-slider', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1147,6 +1181,7 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::chairman.chairman': ApiChairmanChairman;
+      'api::swiper.swiper': ApiSwiperSwiper;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

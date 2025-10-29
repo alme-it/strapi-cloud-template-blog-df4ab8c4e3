@@ -57,8 +57,18 @@ export interface SharedSlider extends Struct.ComponentSchema {
     displayName: 'Slider';
     icon: 'address-book';
   };
+  attributes: {};
+}
+
+export interface SharedSwiperSlider extends Struct.ComponentSchema {
+  collectionName: 'components_shared_swiper_sliders';
+  info: {
+    displayName: 'swiper-slider';
+  };
   attributes: {
-    files: Schema.Attribute.Media<'images', true>;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -70,6 +80,7 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.swiper-slider': SharedSwiperSlider;
     }
   }
 }
