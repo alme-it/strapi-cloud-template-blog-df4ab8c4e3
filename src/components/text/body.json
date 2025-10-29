@@ -1,16 +1,16 @@
 {
-  "collectionName": "components_shared_quotes",
+  "collectionName": "components_text_bodies",
   "info": {
-    "displayName": "Quote",
-    "icon": "indent"
+    "displayName": "body"
   },
   "options": {},
   "attributes": {
-    "title": {
+    "subTitle": {
       "type": "string"
     },
     "desc": {
       "type": "text"
     }
-  }
+  },
+  "config": {}
 }

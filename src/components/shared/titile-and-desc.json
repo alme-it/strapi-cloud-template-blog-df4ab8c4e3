@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_titile_and_descs",
+  "info": {
+    "displayName": "Titile&Desc"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

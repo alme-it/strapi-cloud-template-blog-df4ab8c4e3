@@ -11,6 +11,16 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedParagraph extends Struct.ComponentSchema {
+  collectionName: 'components_shared_paragraphs';
+  info: {
+    displayName: 'Paragraph';
+  };
+  attributes: {
+    content: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedQuote extends Struct.ComponentSchema {
   collectionName: 'components_shared_quotes';
   info: {
@@ -18,7 +28,7 @@ export interface SharedQuote extends Struct.ComponentSchema {
     icon: 'indent';
   };
   attributes: {
-    body: Schema.Attribute.Text;
+    desc: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
 }
@@ -72,15 +82,39 @@ export interface SharedSwiperSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTitileAndDesc extends Struct.ComponentSchema {
+  collectionName: 'components_shared_titile_and_descs';
+  info: {
+    displayName: 'Titile&Desc';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface TextBody extends Struct.ComponentSchema {
+  collectionName: 'components_text_bodies';
+  info: {
+    displayName: 'body';
+  };
+  attributes: {
+    desc: Schema.Attribute.Text;
+    subTitle: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'shared.media': SharedMedia;
+      'shared.paragraph': SharedParagraph;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
       'shared.swiper-slider': SharedSwiperSlider;
+      'shared.titile-and-desc': SharedTitileAndDesc;
+      'text.body': TextBody;
     }
   }
 }

@@ -633,6 +633,73 @@ export interface ApiChairmanChairman extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiShenzhenShenzhen extends Struct.SingleTypeSchema {
+  collectionName: 'shenzhens';
+  info: {
+    displayName: 'shenzhen';
+    pluralName: 'shenzhens';
+    singularName: 'shenzhen';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    cover: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    functions: Schema.Attribute.DynamicZone<['shared.quote']> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::shenzhen.shenzhen'
+    >;
+    office_details: Schema.Attribute.DynamicZone<['shared.quote']> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    office_functions_title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    office_title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSwiperSwiper extends Struct.SingleTypeSchema {
   collectionName: 'swipers';
   info: {
@@ -1181,6 +1248,7 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::chairman.chairman': ApiChairmanChairman;
+      'api::shenzhen.shenzhen': ApiShenzhenShenzhen;
       'api::swiper.swiper': ApiSwiperSwiper;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
